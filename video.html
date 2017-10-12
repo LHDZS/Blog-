@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自定义视频播放</title>
+    <link rel="stylesheet" href="./css/font-awesome.min.css"/>
+    <style>
+        html body {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        video::-webkit-media-controls-enclosure {
+            display: none !important;
+        }
+        .video {
+            width: 800px;
+            height: 450px;
+            margin: 100px auto;
+            background-color: #eee;
+            position: relative;
+        }
+        .kongzhi {
+            width: 100%;
+            height: 35px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            background-color: #fff;
+            opacity: 0.5;
+            z-index: 9999999999;
+        }
+        .play {
+            font-size: 28px;
+            color: black;
+            line-height: 35px;
+            margin-left: 8px;
+        }
+        .duration {
+            width: 70%;
+            height: 15px;
+            position: absolute;
+            left: 50px;
+            top: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .currentTime {
+            width: 0;
+            height: 100%;
+            background-color: #999;
+        }
+        .ended {
+            position: absolute;
+            top: 8px;
+            right: 5%;
+            color: #000;
+        }
+        .screen {
+            position: absolute;
+            top: 0px;
+            right: 1%;
+            font-size: 24px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- 主盒子 -->
+    <div class="video">
+        <!-- 播放器 -->
+        <video src="./video/movie02.mp4" width="100%" height="100%" poster="./images/04380184g4g15lt5wzi9zy.jpg"></video>
+        <!-- 控制台 -->
+        <div class="kongzhi">
+            <!-- 播放/暂停 -->
+            <a class="play" href="javascript:;">
+                <i class="fa fa-play-circle"></i>
+            </a>
+            <!-- 进度条 -->
+            <div class="duration">
+                <div class="currentTime"></div>
+            </div>
+            <!-- 时间 -->
+            <div class="ended">
+                <!-- 当前时间 -->
+                <span class="current">00:00:00</span>
+                <!-- 总时长 -->
+                <span class="total">00:00:00</span>
+            </div>
+            <!-- 全屏 -->
+            <a class="screen" href="javascript:;" >
+                <i class="fa fa-expand"></i>
+            </a>
+        </div>
+    </div>
+    <script src="./js/video.js"></script>
+</body>
+</html>
