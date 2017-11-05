@@ -1,5 +1,5 @@
 let express = require('express');
-
+		 //伊克斯普瑞斯
 let app = express();
 //引入主路由 
 let admin = require('./routes/admin');
@@ -8,6 +8,9 @@ let home = require('./routes/home');
 let session = require('express-session');
 //这个插件用来解析Post参数 当发送一个post请求时 req上回生成一个body的属性
 let bodyParser = require('body-parser');
+
+
+// let locals = require('strftime');
 //当使用了session中间件后 就在req上添加一个session属性
 //通过这个属性可以实现设置和读取session{赛神}的目的 
 //有点类似于php中的 $_SESSION
@@ -26,6 +29,8 @@ app.use(session({
 // 	next();
 // })
 
+// app.locals.title = 'My App';
+// app.locals.strftime = require('strftime');
 //解析Post数据的中间件
 app.use(bodyParser.urlencoded({extended:false}));
 //服务器端口

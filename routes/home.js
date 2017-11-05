@@ -4,6 +4,10 @@ let user = require('../models/user');
 
 let post = require('../models/post');
 
+// let locals = require('strftime');
+
+console.log(locals);
+
 let home = express.Router();
 
 home.get('/',(req,res) => {
@@ -55,7 +59,7 @@ home.get('/article',(req,res) => {
 
 	post.find(req.query.id, (err,rows) => {
 		if(!err) {
-			res.render('home/article',{post:rows[0],posts.rows});
+			res.render('home/article',{post:rows[0]});
 		}
 	})
 	
@@ -114,4 +118,15 @@ home.post('/login',(req,res) => {
 	});
 });
 
-module.exports = home;
+
+// home.get('/layout', (req,res) => {
+
+// 	// console.log(req.query.id);
+
+// 	post.find(req.query.id, (err,rows) => {
+// 		if(!err) {
+// 			res.locals('home/article',{introduce:rows});
+// 		}
+// 	})
+// })
+// module.exports = home;
