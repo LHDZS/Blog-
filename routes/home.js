@@ -4,9 +4,6 @@ let user = require('../models/user');
 
 let post = require('../models/post');
 
-// let locals = require('strftime');
-
-console.log(locals);
 
 let home = express.Router();
 
