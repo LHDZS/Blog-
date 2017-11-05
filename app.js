@@ -21,13 +21,13 @@ app.use(session({
 }));
 //设置一个中间件 处理时间 判断session有没有值 如果没有并且地址不为
 //login的情况下 必须登录 否则不能打开其他页面
-// app.use('/admin',(req,res,next) => {
-// 	if(!req.session.loginfo && req.url != '/login') {
-// 		return res.redirect('/login');
-// 	}
-// 	//处理完 传递给下一层
-// 	next();
-// })
+app.use('/admin',(req,res,next) => {
+	if(!req.session.loginfo && req.url != '/login') {
+		return res.redirect('/login');
+	}
+	//处理完 传递给下一层
+	next();
+})
 
 // app.locals.title = 'My App';
 // app.locals.strftime = require('strftime');
@@ -42,7 +42,9 @@ app.set('view engine','xtpl');
 //中间件 处理静态数据
 app.use(express.static('./public'));
 //中间件 引入主路由
-app.use('/admin', admin);
-app.use('/', home);
+app.use('/admin',admin);
+app.use('/',home);
+
+
 
 

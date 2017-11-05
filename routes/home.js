@@ -116,14 +116,4 @@ home.post('/login',(req,res) => {
 });
 
 
-// home.get('/layout', (req,res) => {
-
-// 	// console.log(req.query.id);
-
-// 	post.find(req.query.id, (err,rows) => {
-// 		if(!err) {
-// 			res.locals('home/article',{introduce:rows});
-// 		}
-// 	})
-// })
-// module.exports = home;
+module.exports = home;
